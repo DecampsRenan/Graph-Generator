@@ -15,6 +15,15 @@ Les demandes:
 - Un graphe connecté signifie que tous les sommets ont au moins un chemin vers les autres sommets.
 
 ## Exemple de format de description de graphe simple
+
+Voici un exemple de format de description de graphe simple. La première ligne contient
+deux valeurs entières : **le nombre de sommets (*n*)** et **le nombre d'arêtes (*m*)**. Les
+*m* lignes suivantes décrivent les arêtes de la façon suivante:
+
+`sommet1 sommet2 poids`
+
+Exemple
+
 ```
 6 9
 0 4 3
@@ -27,6 +36,10 @@ Les demandes:
 
 
 ## Format adopté
+
+Le format adopté pour les échanges entre les services et le portail est le format [JSON](http://www.w3schools.com/json/json_syntax.asp "Syntaxe JSON").
+
+Exemple
 
 ```json
 {
