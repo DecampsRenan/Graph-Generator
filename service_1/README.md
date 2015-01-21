@@ -15,7 +15,13 @@ Les demandes:
 - Un graphe connecté signifie que tous les sommets ont au moins un chemin vers les autres sommets.
 
 ## Exemple de format de description de graphe simple
-
+6 9
+---
+0 4 3
+-----
+0 1 1
+-----
+0 3 10
 
 
 ## Format adopté
