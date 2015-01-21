@@ -13,3 +13,32 @@ Les demandes:
 - Le générateur de graphe doit s'assurer que le graphe est connecté et qu'il n'y ait qu'une seule arête
   par paire de sommets.
 - Un graphe connecté signifie que tous les sommets ont au moins un chemin vers les autres sommets.
+
+## Exemple de format de description de graphe simple
+
+
+
+## Format adopté
+
+```json
+{
+	"nbSommets" : 6,
+	"nbAretes"  : 9,
+	"aretes" : {
+		"0" : [
+			{
+				"nom"   : 4,
+				"poids" : 3
+			},
+			{
+				"nom"   : 1,
+				"poids" : 1
+			},
+			{
+				"nom"   : 3,
+				"poids" : 10
+			}
+		]
+	}
+}
+```
