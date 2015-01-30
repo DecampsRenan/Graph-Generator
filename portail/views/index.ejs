@@ -31,19 +31,26 @@
                         <div class="row">
 
                             Nombre sommet
-                            <input type="text" id="right-label" placeholder="nombre de sommets">
+                            <input type="text" id="nbSommet" placeholder="nombre de sommets">
                             Densité
-                            <input type="number" name="densite" min="0" max="100">
+                            <input type="number" id="densite" name="densite" min="0" max="100">
 
                             <a id="generation" href="#" class="button">Generation</a>
                             <script>
                                 
-                                $.ajax({
-                                    url: "localhost:8081/create/"+nbSommet+"/"+densite,
-                                    context: document.body
-                                }).done(function() {
-                                    $( this ).addClass( "done" );
+                                $( "#generation" ).click(function() {
+                                    var nbSommet = $("#nbSommet").val();
+                                    var densite  = $("#densite").val();
+                                    
+                                    
+                                    $.ajax({
+                                        url: "localhost:8081/create/"+nbSommet+"/"+densite,
+                                        context: document.body
+                                    }).done(function() {
+                                        $( this ).addClass( "done" );
+                                    });
                                 });
+
                             </script>
                             <a href="#" class="button">A*</a>
 
