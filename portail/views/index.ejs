@@ -2,15 +2,80 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/styleGrap.css" />
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/cytoscape.min.js"></script>
+        <script src="js/code.js"></script>
+
         <title>Les graphe</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+
     </head>
     <body>
         
-		<header class="menu">
-			
-		</header>
+        <header class="menu">
+            
+        </header>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Bienvenue sur le portail des Graphes</h1>
+            </div><hr><br/>
+
+            <div class="row">
+                <div class="medium-3 columns panel"><h4>Paramètres d'ations</h4>
+                    <hr>
+                    <form>
+                        <div class="row">
+
+                            Nombre sommet
+                            <input type="text" id="right-label" placeholder="nombre de sommets">
+                            Densité
+                            <input type="number" name="densite" min="0" max="100">
+
+                            <a id="generation" href="#" class="button">Generation</a>
+                            <script>
+                                
+                                $.ajax({
+                                    url: "localhost:8081/create/"+nbSommet+"/"+densite,
+                                    context: document.body
+                                }).done(function() {
+                                    $( this ).addClass( "done" );
+                                });
+                            </script>
+                            <a href="#" class="button">A*</a>
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="medium-9 columns">
+                    <h4> Le Graphes</h4><br/>
+                    <div class="row leGraphe">
+                        <div id="cy"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="row">
+            <div class="large-12 columns">
+                <hr>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>© Copyright Coulon Brodier Benière Decamps .</p>
+                    </div>
+                    <div class="large-6 columns">
+                        <ul class="inline-list right">
+                            <li><a href="#">Nous</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>
