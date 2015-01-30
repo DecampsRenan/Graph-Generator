@@ -14,10 +14,6 @@
 
     </head>
     <body>
-        
-        <header class="menu">
-            
-        </header>
 
         <div class="row">
             <div class="large-12 columns">
@@ -37,17 +33,21 @@
 
                             <a id="generation" href="#" class="button">Generation</a>
                             <script>
-                                
+
                                 $( "#generation" ).click(function() {
                                     var nbSommet = $("#nbSommet").val();
                                     var densite  = $("#densite").val();
-                                    
-                                    
+                                    console.log(nbSommet+"---"+densite);
+
+                     
                                     $.ajax({
-                                        url: "localhost:8081/create/"+nbSommet+"/"+densite,
-                                        context: document.body
-                                    }).done(function() {
-                                        $( this ).addClass( "done" );
+                                        url: "http://localhost:8081/create/45/5",
+                                        dataType: "jsonp",
+                                        crossDomain: true,
+                                        context: document.body,
+                                        success : function(code_html, statut){
+                                            console.log(code_html);
+                                        }
                                     });
                                 });
 
