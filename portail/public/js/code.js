@@ -7,17 +7,12 @@ $(function(){ // on dom ready
         var nbSommet = $("#nbSommet").val(),
             densite  = $("#densite").val();
 
-        console.log("Nombre de sommets : " + nbSommet + "\n Densité : " + densite);
-
         $.ajax({
-            url: 'http://localhost:8081/create/45/5',
+            url: 'http://localhost:8081/create/' + nbSommet + '/' + densite,
             dataType: 'json',
             crossDomain: true,
-            success : function(code_html, statut){
-                console.log(code_html);
-            },
-            error : function(test, err) {
-                console.warn(err);
+            success : function(obj, statut){
+                console.log(obj);
             }
         });
     });
