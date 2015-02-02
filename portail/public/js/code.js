@@ -2,6 +2,29 @@
 
 $(function(){ // on dom ready
 
+
+    $( "#generation" ).click(function() {
+        var nbSommet = $("#nbSommet").val(),
+            densite  = $("#densite").val();
+
+        console.log("Nombre de sommets : " + nbSommet + "\n Densité : " + densite);
+
+        $.ajax({
+            url: 'http://localhost:8081/create/45/5',
+            dataType: 'json',
+            crossDomain: true,
+            success : function(code_html, statut){
+                console.log(code_html);
+            },
+            error : function(test, err) {
+                console.warn(err);
+            }
+        });
+    });
+
+
+    // --------------------------------------------------------------
+
     var cy = cytoscape({
         container: document.getElementById('cy'),
 
@@ -35,7 +58,7 @@ $(function(){ // on dom ready
                 { data: { id: 'e' } },
                 { data: { id: 'f' } },
                 { data: { id: 'g' } }
-            ], 
+            ],
 
             edges: [
                 { data: { id: 'ae', weight: 1, source: 'a', target: 'e' } },

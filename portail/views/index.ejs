@@ -8,8 +8,6 @@
 
         <script src="js/jquery.js"></script>
         <script src="js/cytoscape.min.js"></script>
-        <script src="js/code.js"></script>
-
         <title>Les graphe</title>
 
     </head>
@@ -32,26 +30,6 @@
                             <input type="number" id="densite" name="densite" min="0" max="100">
 
                             <a id="generation" href="#" class="button">Generation</a>
-                            <script>
-
-                                $( "#generation" ).click(function() {
-                                    var nbSommet = $("#nbSommet").val();
-                                    var densite  = $("#densite").val();
-                                    console.log(nbSommet+"---"+densite);
-
-                     
-                                    $.ajax({
-                                        url: "http://localhost:8081/create/45/5",
-                                        dataType: "jsonp",
-                                        crossDomain: true,
-                                        context: document.body,
-                                        success : function(code_html, statut){
-                                            console.log(code_html);
-                                        }
-                                    });
-                                });
-
-                            </script>
                             <a href="#" class="button">A*</a>
 
                         </div>
@@ -83,6 +61,9 @@
                 </div>
             </div>
         </footer>
+
+        <!-- chargement des scripts -->
+        <script src="js/code.js"></script>
 
     </body>
 </html>
