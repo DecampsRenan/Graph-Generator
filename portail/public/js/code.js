@@ -1,5 +1,3 @@
-
-
 $(function(){ // on dom ready
 
 
@@ -82,7 +80,7 @@ $(function(){ // on dom ready
     var highlightNextEle = function(){
         bfs.path[i].addClass('highlighted');
 
-        if( i < bfs.path.length ){
+        if( i < bfs.path.length - 1 ){
             i++;
             setTimeout(highlightNextEle, 1000);
         }
