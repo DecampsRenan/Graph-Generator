@@ -41,8 +41,7 @@ $(function(){ // on dom ready
 				stop: undefined // callback on layoutstop
 			}
 		});
-
-		var bfs = cy.elements().bfs('#a', function(){}, true);
+		
 	}
 
 	$("button").nextAll('button').prop('disabled', 'true');
@@ -93,6 +92,7 @@ $(function(){ // on dom ready
 			url: 'http://localhost:8082/get',
 			data: {'graphe': graph},
 			method: 'POST',
+			headers: {'Access-Control-Allow-Origin': '*'},
 			dataType: 'json',
 			crossDomain: true,
 			success: function(obj, statut) {
