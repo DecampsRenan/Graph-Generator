@@ -55,6 +55,7 @@ $(function(){ // on dom ready
         highlightNextEle();
     }
 
+    // Récupération du graphe généré par le service 1
     $( "#generation" ).click(function(event) {
         event.preventDefault();
         var nbSommet = $("#nbSommet").val(),
@@ -77,5 +78,9 @@ $(function(){ // on dom ready
 
         return false;
     });
+
+    // Envoi et récupération du chemin le plus court
+    // géré par le service 2
+    $( '#djikstra' )
 
 }); // on dom ready
