@@ -90,7 +90,7 @@ $(function(){ // on dom ready
 		event.preventDefault();
 
 		$.ajax({
-			url: 'http://localhost:8082/create',
+			url: 'http://localhost:8082/get',
 			data: {'graphe': graph},
 			method: 'POST',
 			dataType: 'json',
