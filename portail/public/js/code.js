@@ -41,27 +41,15 @@ $(function(){ // on dom ready
         });
 
         var bfs = cy.elements().bfs('#a', function(){}, true);
-
-        var i = 0;
-        var highlightNextEle = function(){
-            bfs.path[i].addClass('highlighted');
-
-            if( i < bfs.path.length - 1 ){
-                i++;
-                highlightNextEle();
-            }
-        };
-        // kick off first highlight
-        highlightNextEle();
     }
+
+    $("button").nextAll('button').prop('disabled', 'true');
 
     // Récupération du graphe généré par le service 1
     $( "#generation" ).click(function(event) {
         event.preventDefault();
         var nbSommet = $("#nbSommet").val(),
             densite  = $("#densite").val();
-
-        console.log(nbSommet + " " + densite);
 
         $.ajax({
             url: 'http://localhost:8081/create/' + nbSommet + '/' + densite,
@@ -70,9 +58,10 @@ $(function(){ // on dom ready
             success : function(obj, statut){
                 console.log("Reçu :", obj);
                 updateGraph(obj);
+                $("button").removeProp('disabled');
             },
             error : function(req, statut, err) {
-                console.log(err);
+                console.warn(err);
             }
         });
 
@@ -81,6 +70,12 @@ $(function(){ // on dom ready
 
     // Envoi et récupération du chemin le plus court
     // géré par le service 2
-    //$( '#djikstra' )
+    $( '#djikstra' ).click(function(event) {
+        event.preventDefault();
+
+
+
+        return false;
+    });
 
 }); // on dom ready
