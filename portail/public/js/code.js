@@ -28,7 +28,7 @@ $(function(){ // on dom ready
             elements: graph,
 
             layout: {
-              name: 'random',
+              name: 'circle',
 
               fit: true, // whether to fit to viewport
               padding: 30, // fit padding
