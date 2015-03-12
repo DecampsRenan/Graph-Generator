@@ -1,5 +1,7 @@
 $(function(){ // on dom ready
 
+    var graph = null;
+
     function updateGraph(graph) {
         var cy = cytoscape({
             container: document.getElementById('cy'),
@@ -57,6 +59,7 @@ $(function(){ // on dom ready
             crossDomain: true,
             success : function(obj, statut){
                 console.log("Reçu :", obj);
+                graph = obj;
                 updateGraph(obj);
                 $("button").removeProp('disabled');
             },
@@ -73,7 +76,19 @@ $(function(){ // on dom ready
     $( '#djikstra' ).click(function(event) {
         event.preventDefault();
 
-
+        $.ajax({
+            url: 'http://localhost:8082/create',
+            data: {'graphe': graph},
+            method: 'POST',
+            dataType: 'json',
+            crossDomain: true,
+            success: function(obj, statut) {
+                console.log('Reçu du service 2:', obj);
+            },
+            error: function(req, statut, err) {
+                console.warn(err);
+            }
+        });
 
         return false;
     });
