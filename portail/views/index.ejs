@@ -23,6 +23,7 @@
             <div class="row">
                 <div class="medium-3 columns panel"><h4>Paramètres d'ations</h4>
                     <hr>
+                    <div id="test"></div>
                     <form>
                         <div class="row">
 
@@ -37,18 +38,40 @@
                                 $( "#generation" ).click(function() {
                                     var nbSommet = $("#nbSommet").val();
                                     var densite  = $("#densite").val();
-                                    console.log(nbSommet+"---"+densite);
 
-                     
-                                    $.ajax({
-                                        url: "http://localhost:8081/create/45/5",
-                                        dataType: "jsonp",
-                                        crossDomain: true,
-                                        context: document.body,
-                                        success : function(code_html, statut){
-                                            console.log(code_html);
-                                        }
+
+
+
+                                    console.log("erzer");
+                                    var url = "http://localhost:8081/create/45/5/?callback=?";
+                                    //var url = "jack.json";
+
+
+                                    $.getJSON( url, function( data ) {
+                                        var items = [];
+                                        $.each( data, function( key, val ) {
+                                            items.push( "<li id='" + key + "'>" + val + "</li>" );
+                                        });
+
+                                        console.log(items);
+
                                     });
+
+                                    /*
+                                    var myJSONData;
+                                    $.getJSON(url, function(data){ myJSONData = JSON.parse(data); })
+                                    setTimeout(function () { 
+                                        //myJSONData = JSON.stringify(myJSONData);
+                                        alert(JSON.parse(myJSONData);
+                                              }, 200);
+                                        function callback(data){
+                                            console.log(data);
+                                            setTimeout(function () { 
+
+                                                alert(JSON.stringify(data));
+                                            }, 200);
+                                        }
+*/
                                 });
 
                             </script>
