@@ -6,7 +6,7 @@ var express = require('express'),
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req,res){
-    res.render('index.ejs', { });
+	res.render('index.ejs', { });
 })
 .listen(80, function() {
 	var port = this.address().port;

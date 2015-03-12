@@ -78,9 +78,19 @@ $(function(){ // on dom ready
 
         return false;
     });
+    
+    
 
     // Envoi et récupération du chemin le plus court
     // géré par le service 2
     //$( '#djikstra' )
+    
+    // Envoies du graphe et récupérations des graphes couvrant minimals
+    var socket = io.connect('http://localhost:8083');
+	
+	$("#kruskal").click(function(){
+    	socket.emit('graphe', 'test');
+		alert('envoie');
+    });
 
 }); // on dom ready
