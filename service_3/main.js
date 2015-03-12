@@ -42,7 +42,7 @@ function kruskal(unGraphe){
 	}
 	
 	for(a=0; a<n; a++){
-		if(	
+		
 	}
 
 	console.log("-----");
