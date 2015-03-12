@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+<<<<<<< HEAD
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/foundation.css" />
@@ -74,4 +75,80 @@
 
 
 	</body>
+=======
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/styleGrap.css" />
+
+        <script src="js/jquery.js"></script>
+        <script src="js/cytoscape.min.js"></script>
+        <title>Graphes</title>
+
+    </head>
+    <body>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Bienvenue sur le portail des Graphes</h1>
+            </div>
+
+            <hr>
+            <br/>
+
+            <div class="row">
+                <div class="medium-3 columns panel"><h4>Paramètres d'actions</h4>
+                    <hr>
+
+                    <div id="test"></div>
+                    <form>
+
+                    <form method='post'>
+
+                        <div class="row">
+
+                            <label for='nbSommet'>Nombre sommet</label>
+                            <input type="text" id="nbSommet" placeholder="nombre de sommets" required>
+                            
+                            <label for='densite'>Densité</label>
+                            <input type="number" id="densite" name="densite" min="1" max="100" required>
+
+                            <button id="generation" class="button">Generation</button>
+                            <button id="djikstra"   class="button">Dijkstra</button>
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="medium-9 columns">
+                    <h4>Graphe</h4><br/>
+                    <div class="row leGraphe">
+                        <div id="cy"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="row">
+            <div class="large-12 columns">
+                <hr>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>© Copyright Coulon Brodier Bernière Decamps .</p>
+                    </div>
+                    <div class="large-6 columns">
+                        <ul class="inline-list right">
+                            <li><a href="#">Nous</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- chargement des scripts -->
+        <script src="js/code.js"></script>
+
+    </body>
+>>>>>>> origin/master
 </html>

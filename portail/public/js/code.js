@@ -1,5 +1,7 @@
 $(function(){ // on dom ready
 
+    var graph = null;
+
     function updateGraph(graph) {
         var cy = cytoscape({
             container: document.getElementById('cy'),
@@ -41,19 +43,9 @@ $(function(){ // on dom ready
         });
 
         var bfs = cy.elements().bfs('#a', function(){}, true);
-
-        var i = 0;
-        var highlightNextEle = function(){
-            bfs.path[i].addClass('highlighted');
-
-            if( i < bfs.path.length - 1 ){
-                i++;
-                highlightNextEle();
-            }
-        };
-        // kick off first highlight
-        highlightNextEle();
     }
+
+    $("button").nextAll('button').prop('disabled', 'true');
 
     // Récupération du graphe généré par le service 1
     $( "#generation" ).click(function(event) {
@@ -61,18 +53,18 @@ $(function(){ // on dom ready
         var nbSommet = $("#nbSommet").val(),
             densite  = $("#densite").val();
 
-        console.log(nbSommet + " " + densite);
-
         $.ajax({
             url: 'http://localhost:8081/create/' + nbSommet + '/' + densite,
             dataType: 'json',
             crossDomain: true,
             success : function(obj, statut){
                 console.log("Reçu :", obj);
+                graph = obj;
                 updateGraph(obj);
+                $("button").removeProp('disabled');
             },
             error : function(req, statut, err) {
-                console.log(err);
+                console.warn(err);
             }
         });
 
@@ -83,6 +75,7 @@ $(function(){ // on dom ready
 
     // Envoi et récupération du chemin le plus court
     // géré par le service 2
+<<<<<<< HEAD
     //$( '#djikstra' )
     
     // Envoies du graphe et récupérations des graphes couvrant minimals
@@ -91,6 +84,26 @@ $(function(){ // on dom ready
 	$("#kruskal").click(function(){
     	socket.emit('graphe', 'test');
 		alert('envoie');
+=======
+    $( '#djikstra' ).click(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: 'http://localhost:8082/create',
+            data: {'graphe': graph},
+            method: 'POST',
+            dataType: 'json',
+            crossDomain: true,
+            success: function(obj, statut) {
+                console.log('Reçu du service 2:', obj);
+            },
+            error: function(req, statut, err) {
+                console.warn(err);
+            }
+        });
+
+        return false;
+>>>>>>> origin/master
     });
 
 }); // on dom ready
