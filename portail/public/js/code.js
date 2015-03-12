@@ -104,7 +104,6 @@ $(function(){ // on dom ready
 		});
 
 		return false;
-		
 	});
 
 }); // on dom ready	
