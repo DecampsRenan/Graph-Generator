@@ -5,12 +5,9 @@
         <link rel="stylesheet" href="css/foundation.css" />
         <link rel="stylesheet" href="css/styleGrap.css" />
 
-
         <script src="js/jquery.js"></script>
         <script src="js/cytoscape.min.js"></script>
-        <script src="js/code.js"></script>
-
-        <title>Les graphe</title>
+        <title>Graphe</title>
 
     </head>
     <body>
@@ -18,19 +15,28 @@
         <div class="row">
             <div class="large-12 columns">
                 <h1>Bienvenue sur le portail des Graphes</h1>
-            </div><hr><br/>
+            </div>
+
+            <hr>
+            <br/>
 
             <div class="row">
-                <div class="medium-3 columns panel"><h4>Paramètres d'ations</h4>
+                <div class="medium-3 columns panel"><h4>Paramètres d'actions</h4>
                     <hr>
+
                     <div id="test"></div>
                     <form>
+
+                    <form method='post'>
+
                         <div class="row">
 
-                            Nombre sommet
-                            <input type="text" id="nbSommet" placeholder="nombre de sommets">
-                            Densité
-                            <input type="number" id="densite" name="densite" min="0" max="100">
+                            <label for='nbSommet'>Nombre sommet</label>
+                            <input type="text" id="nbSommet" placeholder="nombre de sommets" required>
+                            
+                            <label for='densite'>Densité</label>
+                            <input type="number" id="densite" name="densite" min="1" max="100" required>
+
 
                             <a id="generation" href="#" class="button">Generation</a>
                             <script>
@@ -77,6 +83,11 @@
                             </script>
                             <a href="#" class="button">A*</a>
 
+
+                            <button id="generation" class="button">Generation</button>
+                            <button id="a_star" class="button">A*</button>
+
+
                         </div>
                     </form>
 
@@ -96,7 +107,7 @@
                 <hr>
                 <div class="row">
                     <div class="large-6 columns">
-                        <p>© Copyright Coulon Brodier Benière Decamps .</p>
+                        <p>© Copyright Coulon Brodier Bernière Decamps .</p>
                     </div>
                     <div class="large-6 columns">
                         <ul class="inline-list right">
@@ -106,6 +117,9 @@
                 </div>
             </div>
         </footer>
+
+        <!-- chargement des scripts -->
+        <script src="js/code.js"></script>
 
     </body>
 </html>

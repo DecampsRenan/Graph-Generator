@@ -9,4 +9,6 @@ global.Graphe = Graphe;
 
 // Initialisation des routes
 require('routes');
+
+// Initialisation du serveur et lancement
 require('init');
