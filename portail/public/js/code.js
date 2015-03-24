@@ -96,6 +96,16 @@ $(function(){ // on dom ready
 			crossDomain: true,
 			success: function(obj, statut) {
 				console.log('Reçu du service 2:', obj);
+				$("#sssp tbody").remove();
+				$("#sssp").append("<tbody>");
+				for (var i = 0; i < obj.sommets.length; i++) {
+					$("#sssp").append("<tr><td>"
+										+obj.source+"</td><td>"
+										+obj.sommets[i]+"</td><td>"
+										+obj.distance[i]
+									+"</td></tr>");
+				}		
+				$("#sssp").append("</tbody>");
 			},
 			error: function(req, statut, err) {
 				console.warn(err);
