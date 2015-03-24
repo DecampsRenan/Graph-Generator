@@ -2,7 +2,6 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-
 io.on('connection', function(socket){
 	console.log('a user connected');
 	
@@ -11,7 +10,6 @@ io.on('connection', function(socket){
 		console.log('GRAPHE D’ENTREE\n');
 		console.log(socket);
 		var LeGraphe = socket;
-		//console.log(JSON.stringify(LeGraphe));
 
 		var krustalResultat = kruskal(LeGraphe);
 	});
@@ -129,8 +127,6 @@ function kruskal(unGraphe){
 	
 	return null;
 }
-
-
 
 // Lancement du serveur
 server.listen(8083, function() {
