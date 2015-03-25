@@ -94,8 +94,13 @@ $(function(){ // on dom ready
 			method: 'POST',
 			dataType: 'json',
 			crossDomain: true,
+			xhrFields: {
+				withCredentials: true
+			},
 			success: function(obj, statut) {
 				console.log('Reçu du service 2:', obj);
+				var tab = $('#tab');
+
 			},
 			error: function(req, statut, err) {
 				console.warn(err);

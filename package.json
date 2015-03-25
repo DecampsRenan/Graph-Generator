@@ -1,0 +1,30 @@
+{
+  "name": "WebApp",
+  "version": "1.0.0",
+  "description": "Gestion de Graphes.",
+  "main": "launcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdecamps/WebApp.git"
+  },
+  "keywords": [
+    "js",
+    "ajax",
+    "graph",
+    "node",
+    "jquery",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdecamps/WebApp/issues"
+  },
+  "homepage": "https://github.com/rdecamps/WebApp",
+  "dependencies": {
+    "colors": "^1.0.3"
+  }
+}
