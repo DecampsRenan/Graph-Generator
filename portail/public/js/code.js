@@ -36,9 +36,7 @@ $(function(){ // on dom ready
 				padding: 30, // fit padding
 				boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
 				animate: true, // whether to transition the node positions
-				animationDuration: 500, // duration of animation in ms if enabled
-				ready: undefined, // callback on layoutready
-				stop: undefined // callback on layoutstop
+				animationDuration: 250, // duration of animation in ms if enabled
 			}
 		});
 		
@@ -53,7 +51,7 @@ $(function(){ // on dom ready
 			densite  = $("#densite").val();
 
 		$.ajax({
-			url: 'http://localhost:8081/create/' + nbSommet + '/' + densite,
+			url: 'http://127.0.0.1:8081/create/' + nbSommet + '/' + densite,
 			dataType: 'json',
 			crossDomain: true,
 			success : function(obj, statut){
@@ -76,7 +74,7 @@ $(function(){ // on dom ready
 	// géré par le service 2
 
 	// Envoies du graphe et récupérations des graphes couvrant minimals
-	var socket = io.connect('http://localhost:8083');
+	var socket = io.connect('http://127.0.0.1:8083');
 
 	$("#kruskal").click(function(event){
 		event.preventDefault();
@@ -89,14 +87,11 @@ $(function(){ // on dom ready
 		event.preventDefault();
 
 		$.ajax({
-			url: 'http://localhost:8082/get',
+			url: 'http://127.0.0.1:8082/get',
 			data: {'graphe': graph},
 			method: 'POST',
 			dataType: 'json',
 			crossDomain: true,
-			xhrFields: {
-				withCredentials: true
-			},
 			success: function(obj, statut) {
 				console.log('Reçu du service 2 : ', obj);
 				$("#sssp tbody").remove();
@@ -117,4 +112,4 @@ $(function(){ // on dom ready
 		return false;
 	});
 
-}); // on dom ready	
+});

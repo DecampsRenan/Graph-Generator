@@ -4,6 +4,7 @@
   "description": "Single Source Shortest Path problem",
   "main": "main.js",
   "dependencies": {
+    "body-parser": "^1.12.2",
     "express": "^4.11.1"
   },
   "devDependencies": {},
