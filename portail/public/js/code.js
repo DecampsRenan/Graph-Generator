@@ -16,7 +16,8 @@ $(function(){ // on dom ready
 				'target-arrow-shape': '', //forme du trait triangle pour avoir une fleche
 				'width': 4,
 				'line-color': '#ddd',
-				'target-arrow-color': '#ddd'
+				'target-arrow-color': '#ddd',
+				'content': 'data(weight)'
 			})
 			.selector('.highlighted')
 			.css({
